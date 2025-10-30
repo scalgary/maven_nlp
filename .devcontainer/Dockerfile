@@ -1,9 +1,9 @@
 FROM python:3.12-slim
 
 RUN apt-get update && \
-apt-get install -y git curl && \
-rm -rf /var/lib/apt/lists/*
-
+    apt-get install -y git curl git-lfs && \
+    git lfs install && \
+    rm -rf /var/lib/apt/lists/*
 RUN useradd -m -s /bin/bash vscode
 USER vscode
 
